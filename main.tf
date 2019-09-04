@@ -10,13 +10,13 @@ data "external" "plan_id" {
 }
 
 locals {
-  plan_id     = "${data.external.plan_id.result}"
+  plan     = "${data.external.plan_id.result}"
 }
 
 resource "aws_backup_selection" "central_backup_selection" {
   iam_role_arn = "${aws_iam_role.example.arn}"
   name         = "central_backup_selection"
-  plan_id      = "${plan_id}"
+  plan_id      = "${lookup(var.plan,"plan_id")}"
 
   resources = [
     "${aws_db_instance.example.arn}",
