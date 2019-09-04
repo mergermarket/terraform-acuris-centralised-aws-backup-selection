@@ -5,12 +5,12 @@ data "external" "plan_id" {
   ]
 
   query = {
-    plan_name = "${variables.plan_name}"
+    plan_name = "${var.plan_name}"
   }
 }
 
 locals {
-  plan     = "${data.external.plan_id.result}"
+  plan = "${data.external.plan_id.result}"
 }
 
 resource "aws_backup_selection" "central_backup_selection" {
