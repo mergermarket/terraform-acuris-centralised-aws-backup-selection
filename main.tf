@@ -16,7 +16,7 @@ locals {
 resource "aws_backup_selection" "central_backup_selection" {
   iam_role_arn = "${aws_iam_role.example.arn}"
   name         = "central_backup_selection"
-  plan_id      = "${lookup(var.plan,"plan_id")}"
+  plan_id      = "${lookup(local.plan,"plan_id")}"
 
   resources = [
     "${aws_db_instance.example.arn}",
