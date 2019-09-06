@@ -10,10 +10,8 @@ def read_in(input):
             jsondata = json.loads(line)
     return jsondata
 
-def main(input, output):
+def main(input, output, client):
     jsondata = read_in(input)
-
-    client = boto3.client('backup', region_name='eu-west-1')
 
     response = client.list_backup_plans(
         MaxResults=100,
@@ -25,4 +23,4 @@ def main(input, output):
             output.write(json.dumps({"plan_id":backupPlan['BackupPlanId']}))
 
 if __name__ == '__main__':
-    main(sys.stdin, sys.stdout)
+    main(sys.stdin, sys.stdout, boto3.client('backup', region_name='eu-west-1'))
