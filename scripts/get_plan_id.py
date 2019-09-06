@@ -12,8 +12,8 @@ def read_in(input):
 
 def main(input, output):
     jsondata = read_in(input)
-    
-    client = boto3.client('backup')
+
+    client = boto3.client('backup', region_name='eu-west-1')
 
     response = client.list_backup_plans(
         MaxResults=100,

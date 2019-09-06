@@ -1,6 +1,5 @@
 import sys, io
 import unittest
-from unittest.mock import patch
 import get_plan_id
 
 class TestGetPlanId(unittest.TestCase):
