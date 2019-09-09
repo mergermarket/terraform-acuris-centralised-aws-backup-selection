@@ -29,3 +29,4 @@ docker container run \
 run_in_container terraform init
 run_in_container terraform validate -var plan_name=myplan -var database=mydb
 run_in_container python3 -m unittest discover scripts
+run_in_container flake8 scripts
