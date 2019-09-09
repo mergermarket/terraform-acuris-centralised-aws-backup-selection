@@ -1,1 +1,1 @@
-# tf_centralised_aws_backup_selection
+# tf_centralised_aws_backup_selection [![Build Status](https://travis-ci.org/mergermarket/tf_centralised_aws_backup_selection.svg?branch=master)](https://travis-ci.org/mergermarket/tf_centralised_aws_backup_selection)
