@@ -8,5 +8,5 @@ variable "database" {
 
 variable "backup_role_name" {
   description = "The name of the IAM role for the backup service to use."
-  default = "backup_role"
+  default     = "backup_role"
 }
