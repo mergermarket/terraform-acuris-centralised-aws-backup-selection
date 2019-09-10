@@ -30,5 +30,5 @@ if __name__ == '__main__':
     main(
         sys.stdin,
         sys.stdout,
-        boto3.client('backup', region_name='eu-west-1'),
+        boto3.client('backup'),
     )
