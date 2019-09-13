@@ -1,5 +1,5 @@
 variable "plan_name" {
-  description = "The name of the backup plan e.g. 'daily_plan'."
+  description = "The name of an existing backup plan e.g. 'daily_plan'."
 }
 
 variable "database_arn" {
