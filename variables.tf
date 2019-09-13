@@ -11,6 +11,6 @@ variable "backup_role_name" {
   default     = "backup_role"
 }
 
-variable "name" {
+variable "identifier" {
   description = "The name shown in the resources of the backup plan."
 }
