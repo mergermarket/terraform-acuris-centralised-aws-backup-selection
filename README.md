@@ -15,8 +15,9 @@ This module will deploy a selected backup plan to the project database
 ## Usage
 
 ```hcl
-module "backup_selection" {
-  source       = "github.com/mergermarket/terraform-acuris-centralised-aws-backup-selection"
+module "backup-selection" {
+  source       = "mergermarket/centralised-aws-backup-selection/acuris"
+  version      = "1.0.0"
   identifier   = "${aws_db_instance.example_database.identifier}"
   database_arn = "${aws_db_instance.example_database.arn}"
   plan_name    = "daily_plan"
