@@ -20,12 +20,16 @@ class MockClient:
 class TestGetPlanId(unittest.TestCase):
 
     def test_read_in(self):
-        input = io.StringIO('{"test":"12345"}')
+        input = io.StringIO('{"test":"12345", "region":"eu-west-1"}')
         result = get_plan_id.read_in(input)
-        self.assertEqual(result, {"test": "12345"})
+        self.assertEqual(result, {
+            "test": "12345", "region": "eu-west-1"
+        })
 
     def test_main(self):
-        input = io.StringIO('{"plan_name":"daily_expire_28_days"}')
+        input = io.StringIO(
+            '{"plan_name":"daily_expire_28_days", "region":"eu-west-1"}'
+        )
         output = io.StringIO()
         get_plan_id.main(input, output, MockClient())
         output.seek(0)

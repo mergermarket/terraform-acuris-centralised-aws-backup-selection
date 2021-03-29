@@ -1,3 +1,4 @@
+data "aws_region" "current" {}
 data "external" "plan_id" {
   program = [
     "python",
@@ -5,7 +6,8 @@ data "external" "plan_id" {
   ]
 
   query = {
-    plan_name = "${var.plan_name}"
+    plan_name = "${var.plan_name}",
+    region = "${data.aws_region.current.name}"
   }
 }
 

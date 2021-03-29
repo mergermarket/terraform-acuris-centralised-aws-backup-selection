@@ -2,6 +2,7 @@ import json
 import sys
 
 import boto3
+from botocore import config
 
 
 def read_in(input):
@@ -13,8 +14,13 @@ def read_in(input):
     return jsondata
 
 
-def main(input, output, client):
+def main(input, output, client=None):
     jsondata = read_in(input)
+
+    provider_config = config.Config(region_name=jsondata['region'])
+
+    if client is None:
+        client = boto3.client('backup', config=provider_config),
 
     response = client.list_backup_plans(
         MaxResults=100,
@@ -30,5 +36,5 @@ if __name__ == '__main__':
     main(
         sys.stdin,
         sys.stdout,
-        boto3.client('backup'),
+        None
     )
