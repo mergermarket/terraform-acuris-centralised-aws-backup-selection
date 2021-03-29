@@ -20,7 +20,7 @@ def main(input, output, client=None):
     provider_config = config.Config(region_name=jsondata['region'])
 
     if client is None:
-        client = boto3.client('backup', config=provider_config),
+        client = boto3.client('backup', config=provider_config)
 
     response = client.list_backup_plans(
         MaxResults=100,
