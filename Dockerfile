@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:0.11.4
+FROM hashicorp/terraform:0.15.1
 
 WORKDIR /opt/
 
