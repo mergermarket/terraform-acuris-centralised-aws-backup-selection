@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "07:00"
+    timezone: Europe/London
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: hashicorp/terraform
+    versions:
+    - 0.14.10
+    - 0.14.5
+    - 0.14.6
+    - 0.14.7
+    - 0.14.8
+    - 0.14.9
+    - 0.15.0
