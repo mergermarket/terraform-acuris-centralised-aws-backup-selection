@@ -19,14 +19,10 @@ trap cleanup EXIT
 
 docker image build -t "${IMAGE_ID}" .
 
+echo "Image Built"
+
 docker container run \
     --name "${IMAGE_ID}" \
-    --entrypoint= \
-    -d \
-    "${IMAGE_ID}" \
-    tail -f /dev/null
-
-run_in_container terraform init
-run_in_container terraform validate -var plan_name=myplan -var database_arn=mydbarn -var identifier=mydb
-run_in_container python3 -m unittest discover scripts
-run_in_container flake8 scripts
+    -i \
+    -w "/opt" \
+    "${IMAGE_ID}"
