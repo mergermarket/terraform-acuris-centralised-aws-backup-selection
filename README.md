@@ -1,6 +1,6 @@
 # Centralised AWS Backup Selection
 
-[![Build Status](https://travis-ci.org/mergermarket/terraform-acuris-centralised-aws-backup-selection.svg?branch=master)](https://travis-ci.org/mergermarket/terraform-acuris-centralised-aws-backup-selection)
+[![Test](https://github.com/mergermarket/terraform-acuris-centralised-aws-backup-selection/actions/workflows/test.yml/badge.svg)](https://github.com/mergermarket/terraform-acuris-centralised-aws-backup-selection/actions/workflows/test.yml)
 
 This module will deploy a selected backup plan to the project database
 
