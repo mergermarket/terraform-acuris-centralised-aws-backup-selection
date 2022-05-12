@@ -17,7 +17,7 @@ This module will deploy a selected backup plan to the project database
 ```hcl
 module "backup-selection" {
   source       = "mergermarket/centralised-aws-backup-selection/acuris"
-  version      = "1.0.0"
+  version      = "1.0.2"
   identifier   = "${aws_db_instance.example_database.identifier}"
   database_arn = "${aws_db_instance.example_database.arn}"
   plan_name    = "default"
