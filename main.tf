@@ -26,4 +26,11 @@ resource "aws_backup_selection" "central_backup_selection" {
   resources = [
     "${var.database_arn}",
   ]
+
+  not_resources = [
+    "arn:aws:dynamodb:*:*:table/*",
+    "arn:aws:rds:*:*:cluster:*",
+    "arn:*:fsx:*",
+    "arn:aws:elasticfilesystem:*:*:file-system/*"
+  ]
 }
