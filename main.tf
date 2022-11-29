@@ -31,6 +31,7 @@ resource "aws_backup_selection" "central_backup_selection" {
     "arn:aws:dynamodb:*:*:table/*",
     "arn:aws:rds:*:*:cluster:*",
     "arn:*:fsx:*",
-    "arn:aws:elasticfilesystem:*:*:file-system/*"
+    "arn:aws:elasticfilesystem:*:*:file-system/*",
+    "arn:aws:rds:*:*:db:*"
   ]
 }
